@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+    
+    <h2>Veillez renseigner le formulaire</h2>
+    <form action="" method="post">
+        <label for="nom">Nom:</label><input type="text" name="nom"><br><br>
+        <label for="prenom">Prénom:</label><input type="text" name="prenom"><br><br>
+        <label for="adresse">Adresse:</label><input type="text" name="adresse"><br><br>
+        <label for="email">Email:</label><input type="text" name="email"><br><br>
+        <label for="telephone">Téléphone:</label><input type="text" name="telephone"><br><br>
+        <input type="submit" value="Valider">
+    </form>
+
+
+    <script type="text/javascript">
+      
+        // Récupération de l'élément <form> du document
+        const form = document.querySelector('form');
+
+        // Ajout d'un écouteur d'événement sur la soumission du formulaire
+        form.addEventListener('submit', (event) => {
+          event.preventDefault(); // Empêche le formulaire de s'envoyer
+
+          // Récupération des valeurs saisies par l'utilisateur
+          const nom = document.querySelector('input[name="nom"]').value;
+          const prenom = document.querySelector('input[name="prenom"]').value;
+          const adresse = document.querySelector('input[name="adresse"]').value;
+          const email = document.querySelector('input[name="email"]').value;
+          const telephone = document.querySelector('input[name="telephone"]').value;
+
+          // Affichage du message de remerciement avec les informations de l'utilisateur
+          alert(`Merci ${prenom} ${nom} pour votre inscription. Nous avons bien enregistré vos informations : 
+            Adresse : ${adresse}
+            Email : ${email}
+            Téléphone : ${telephone}
+          `);
+          // Réinitialisation du formulaire
+          form.reset();
+  
+        });
+    </script>
+</body>
+</html>
